@@ -1,14 +1,6 @@
+from import_modules.validator import set_values
 print('''Danyil Lytvynov
 Task_2 IKM-221D''')
-
-
-def set_values():
-	while True:
-		try:
-			return list(map(int, input().split()))
-		except ValueError:
-			print('Uncorrect value.')
-
 
 def validate_zero_division():
 	while True:
