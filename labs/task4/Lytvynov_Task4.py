@@ -9,6 +9,9 @@ def polindrom(x: str):
 
 
 if __name__ == '__main__':
+   x = set_value()
+
+   print(polindrom(x))
 
    x = set_value()
 
