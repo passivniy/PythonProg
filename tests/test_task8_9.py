@@ -87,7 +87,7 @@ def test_for_money_f():
 
 
 def test_for_money_f():
-    assert chess(5, 'd') == '\nYour postition is : White'
+    assert chess(5, 'd') == '[5, d]: White'
 
 
 def test_for_f_from_ten_to_two():
@@ -97,18 +97,3 @@ def test_for_f_from_ten_to_two():
 def test_for_f_from_two_to_ten():
     assert from_two_to_ten('101110111') == 375
 
-
-if __name__ == '__main__':
-    test_for_f_greeting_full()
-    test_for_f_greeting_empty()
-    test_for_f_n_of_sides_positive()
-    test_for_f_n_of_sides_negative()
-    test_for_f_serial_numbers()
-    test_for_f_days_in_m()
-    test_for_f_leap_year_t()
-    test_for_f_leap_year_f()
-    test_for_f_calculate_plus()
-    test_for_f_calculate_minus()
-    test_for_f_calculate_pow()
-    test_for_f_calculate_div()
-    test_for_f_calculate_mod()
