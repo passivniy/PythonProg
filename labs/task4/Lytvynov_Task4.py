@@ -5,14 +5,8 @@ Lytvynov Danyil''')
 
 
 def polindrom(x: str):
-   return 'Polindrom' if x == x[::-1] else 'Not polindrom'
+    return 'Polindrom' if x == x[::-1] else 'Not polindrom'
 
 
 if __name__ == '__main__':
-   x = set_value()
-
-   print(polindrom(x))
-
-   x = set_value()
-
-   print(polindrom(x))
+    print(polindrom(set_value(str)))
