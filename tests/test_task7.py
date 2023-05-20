@@ -1,54 +1,48 @@
+import pytest
 from labs.task7.Lytvynov_Task7 import Complex
 
-PARAM_A = Complex(5, 15)
-PARAM_B = Complex(2, -7)
+
+@pytest.fixture()
+def param_a():
+	return Complex(5, 15)
 
 
-def test_for_add():
-	actual = PARAM_A+PARAM_B
+@pytest.fixture()
+def param_b():
+	return Complex(2, -7)
+
+
+def test_for_add(param_a, param_b):
+	actual = param_a + param_b
 	expected = '7 + 8i'
 	assert str(actual) == expected
 
 
-def test_for_sub():
-	actual = PARAM_A-PARAM_B
+def test_for_sub(param_a, param_b):
+	actual = param_a - param_b
 	expected = '3 + 22i'
 	assert(str(actual)) == expected
 
 
-def test_for_mul():
-	actual = PARAM_A*PARAM_B
-	expected = '10-105i'
+def test_for_mul(param_a, param_b):
+	actual = param_a * param_b
+	expected = Complex(10, 105)
+	assert actual == expected
+
+
+def test_for_truediv(param_a, param_b):
+	actual = param_a / param_b
+	expected = '2.5 - 2.14i'
 	assert(str(actual)) == expected
 
 
-def test_for_truediv():
-	actual = PARAM_A/PARAM_B
-	expected = '2.5-2.14i'
-	assert(str(actual)) == expected
-
-
-def test_for_module():
-	actual = PARAM_A.module()
+def test_for_module(param_a, param_b):
+	actual = param_a.module()
 	expected = '15.81'
 	assert (str(actual)) == expected
 
 
-def test_for_str():
-	actual = Complex.__str__(PARAM_A)
+def test_for_str(param_a, param_b):
+	actual = Complex.__str__(param_a)
 	expected = '5 + 15i'
 	assert str(actual) == expected
-
-
-if __name__ == '__main__':
-	test_for_add()
-
-	test_for_sub()
-
-	test_for_mul()
-
-	test_for_truediv()
-
-	test_for_module()
-
-	test_for_str()
