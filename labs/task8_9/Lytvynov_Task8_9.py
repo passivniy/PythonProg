@@ -8,7 +8,7 @@ POLYGONS = {3: 'Triangle',
             6: 'Hexagon'}
 
 MONTHS = {'January': 31, 'February': '28/29', 'March': 31, 'April': 30, 'May': 31, 'June': 30, 'July': 31,
-          'August': 31,'September': 30, 'October': 31, 'November': 30, 'December': 31}
+          'August': 31, 'September': 30, 'October': 31, 'November': 30, 'December': 31}
 
 MONEY = {20: 'Двадцять гривень/Іван Франко',
            50: 'П\'ятдесять гривень/Михайло Грушевський',
@@ -18,6 +18,7 @@ MONEY = {20: 'Двадцять гривень/Іван Франко',
            1000: 'Тисяча Гривень/Владимир Вернадський'}
 
 CHESS_LIST = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8}
+
 
 def greeting(array_users):
     if not array_users:
@@ -86,9 +87,6 @@ def rock_paper_scissors(value):
     x = value
     y = random.choice(options)
 
-    print(f'Your turn: {value}')
-    print(f'Computers turn: {y}')
-
     if x == y:
         return 'Draw,try again!'
 
@@ -128,4 +126,4 @@ if __name__ == '__main__':
 
     print('In binary : 101110111, in decimal : ', from_two_to_ten('101110111'))
 
-    print(rock_paper_scissors(random.choice(['rock', 'paper', 'scissors'])))
+    print(rock_paper_scissors(random.choice(['rock', 'paper', 'scissors']))
