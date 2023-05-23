@@ -15,7 +15,7 @@ def param_b():
 def test_for_add(param_a, param_b):
 	actual = param_a + param_b
 	expected = '7 + 8i'
-	assert str(actual) == expected
+	assert actual == expected
 
 
 def test_for_sub(param_a, param_b):
