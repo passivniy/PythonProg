@@ -56,10 +56,9 @@ def book(filename: str, outpfilename: str):
 
 
 if __name__ == '__main__':
-    '''
-    print(read_and_write('input/numbers.txt', 'output/sum_numbers.txt'))
+    print(read_and_write('../../input/numbers.txt', '../../output/sum_numbers.txt'))
     
-    print(even_or_odd('output/typeOfNumber.txt'))
+    print(even_or_odd('../../output/typeOfNumber.txt'))
     
     sentence_list = read_sentence_about_py('../../input/learning_python.txt')
     
@@ -68,5 +67,5 @@ if __name__ == '__main__':
     print(greeting_to_file('../../output/guest_book.txt'))
 
     print(the_in_text('../../input/book.txt'))
-    '''
+
     print(book('../../input/book.txt', '../../output/book_out.txt'))
