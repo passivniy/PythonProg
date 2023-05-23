@@ -28,6 +28,7 @@ def read_sentence_about_py(filename: str):
     print(sentence_list)
     return sentence_list
 
+
 def greeting_to_file(filename: str):
     name = 'Name'
     while name:
@@ -51,22 +52,21 @@ def book(filename: str, outpfilename: str):
         reading_result = book_for_read.read()
 
     with open(outpfilename, 'w', encoding='utf8') as book_for_write:
-       book_for_write.write(textwrap.fill((reading_result.replace('\n', '')), width=120))
+        book_for_write.write(textwrap.fill((reading_result.replace('\n', '')), width=120))
     return 'Complete'
 
 
 if __name__ == '__main__':
-    '''
     print(read_and_write('input/numbers.txt', 'output/sum_numbers.txt'))
-    
+
     print(even_or_odd('output/typeOfNumber.txt'))
-    
+
     sentence_list = read_sentence_about_py('../../input/learning_python.txt')
-    
-    print(sentenceList.replace('Python', 'C'))
+
+    print(sentence_list.replace('Python', 'C'))
 
     print(greeting_to_file('../../output/guest_book.txt'))
 
     print(the_in_text('../../input/book.txt'))
-    '''
+
     print(book('../../input/book.txt', '../../output/book_out.txt'))
