@@ -14,35 +14,35 @@ def param_b():
 
 def test_for_add(param_a, param_b):
 	actual = param_a + param_b
-	expected = '7 + 8i'
+	expected = Complex(7, 8)
 	assert actual == expected
 
 
 def test_for_sub(param_a, param_b):
 	actual = param_a - param_b
-	expected = '3 + 22i'
-	assert(str(actual)) == expected
+	expected = Complex(3, 22)
+	assert actual == expected
 
 
 def test_for_mul(param_a, param_b):
 	actual = param_a * param_b
-	expected = Complex(10, 105)
+	expected = Complex(10, -105)
 	assert actual == expected
 
 
 def test_for_truediv(param_a, param_b):
 	actual = param_a / param_b
-	expected = '2.5 - 2.14i'
-	assert(str(actual)) == expected
+	expected = Complex(2.5, -2.14)
+	assert actual == expected
 
 
 def test_for_module(param_a, param_b):
 	actual = param_a.module()
-	expected = '15.81'
-	assert (str(actual)) == expected
+	expected = Complex(15.81)
+	assert actual == expected
 
 
 def test_for_str(param_a, param_b):
 	actual = Complex.__str__(param_a)
 	expected = '5 + 15i'
-	assert str(actual) == expected
+	assert actual == expected
