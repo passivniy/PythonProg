@@ -5,12 +5,10 @@ print('IKM-221D Task_6')
 print('Lytvynov Danyil')
 
 
-#Цикл в комрехеншен [], открытие в 1 файл
 def read_and_write(inp_filename: str, out_filename: str):
     summ = int()
     with open(inp_filename, 'r') as inp_param:
-        for line in inp_param:
-            summ += int(line)
+        summ = sum(int(line) for line in inp_param)
 
     with open(out_filename, 'w') as out_summ:
         out_summ.write(str(summ))
@@ -22,12 +20,18 @@ def even_or_odd(out_filename: str):
         out.write('Odd' if x % 2 else 'Even')
 
 
-#Добавить построковое считывание и вывести в цикле каждое предложение
 def read_sentence_about_py(filename: str):
     with open(filename, 'r') as inpSentence:
-        sentence_list = inpSentence.read()
-    print(sentence_list)
+        sentence_list = inpSentence.read().splitlines()
+
+    print('\n'.join([item for item in sentence_list]))
     return sentence_list
+
+
+def replace_Py_to_C(data: list):
+    result = list()
+    result.append([i.replace('Python', 'C') for i in data])
+    return result
 
 
 def greeting_to_file(filename: str):
@@ -53,19 +57,18 @@ def book(filename: str, outpfilename: str):
 
 
 if __name__ == '__main__':
-    '''
-    print(read_and_write('input/numbers.txt', 'output/sum_numbers.txt'))
+    print(read_and_write('../../input/numbers.txt', '../../output/sum_numbers.txt'))
 
-    print(even_or_odd('output/typeOfNumber.txt'))
+    sentence_list = read_sentence_about_py('../../input/learning_python.txt')
+    
+    print(even_or_odd('../../output/typeOfNumber.txt'))
 
     sentence_list = read_sentence_about_py('../../input/learning_python.txt')
 
-    print(sentence_list.replace('Python', 'C'))
+    print(replace_Py_to_C(sentence_list))
 
     print(greeting_to_file('../../output/guest_book.txt'))
 
     print(the_in_text('../../input/book.txt'))
 
-    print(book('../../input/book.txt', '../../output/book_out.txt'))
-    '''
     print(book('../../input/book.txt', '../../output/book_out.txt'))
