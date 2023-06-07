@@ -11,11 +11,11 @@ MONTHS = {'January': 31, 'February': '28/29', 'March': 31, 'April': 30, 'May': 3
           'August': 31, 'September': 30, 'October': 31, 'November': 30, 'December': 31}
 
 MONEY = {20: 'Двадцять гривень/Іван Франко',
-           50: 'П\'ятдесять гривень/Михайло Грушевський',
-           100: 'Сто гривень/Тарас Шевченко',
-           200: 'Двісті гривень/Леся Українка',
-           500: 'П\'ятсот гривень/Григорій Сковорода',
-           1000: 'Тисяча Гривень/Владимир Вернадський'}
+         50: 'П\'ятдесять гривень/Михайло Грушевський',
+         100: 'Сто гривень/Тарас Шевченко',
+         200: 'Двісті гривень/Леся Українка',
+         500: 'П\'ятсот гривень/Григорій Сковорода',
+         1000: 'Тисяча Гривень/Владимир Вернадський'}
 
 CHESS_LIST = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8}
 
@@ -59,7 +59,7 @@ def calculate(x, y, act):
 
 def money_function(number):
     return str('Номінал : ' + str(MONEY[number][:(MONEY[number].find('/'))]) + '    Зображен : ' + str(
-            MONEY[number][(MONEY[number].find('/')) + 1:])) if number in MONEY else 'Uncorrect value!'
+        MONEY[number][(MONEY[number].find('/')) + 1:])) if number in MONEY else 'Uncorrect value!'
 
 
 def chess(pos1, pos2):
@@ -91,7 +91,7 @@ def rock_paper_scissors(value):
         return 'Draw,try again!'
 
     return 'You are winner!' if x == 'rock' and y == 'scissors' or x == 'scissors' and y == 'paper' or x == 'paper' \
-        and y == 'rock' else 'You are loss.'
+                                and y == 'rock' else 'You are loss.'
 
 
 if __name__ == '__main__':

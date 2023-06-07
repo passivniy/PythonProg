@@ -33,7 +33,7 @@ def test_for_f_n_of_sides_negative():
 def test_for_f_serial_numbers():
     f_param = [1, 2, 3, 4]
     actual = func_for_serial_numbers(f_param)
-    expected=['1st', '2nd', '3rd', '4th']
+    expected = ['1st', '2nd', '3rd', '4th']
     assert actual == expected
 
 
@@ -96,4 +96,3 @@ def test_for_f_from_ten_to_two():
 
 def test_for_f_from_two_to_ten():
     assert from_two_to_ten('101110111') == 375
-
