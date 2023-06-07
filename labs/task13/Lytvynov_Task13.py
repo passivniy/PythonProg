@@ -10,7 +10,7 @@ class MainApp(MDApp):
         self.theme_cls.primary_palette = 'BlueGray'
         return Builder.load_file('Lytvynov_Task13.kv')
 
-    turn = 'X
+    turn = 'X'
 
     winner = False
 
