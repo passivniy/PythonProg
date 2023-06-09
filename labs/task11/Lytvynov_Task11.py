@@ -1,11 +1,7 @@
 import re
 
 
-def search_date_group(line: str):
-    return re.search(r'(\d{1,2}|\d{4})[./](\d{1,2})[./](\d{4}|\d{1,2})', line)
-
-
-def date_in_right_format(match):
+def get_date_in_right_format(match):
     value1 = match.group(1).zfill(2)
     month = match.group(2).zfill(2)
     value3 = match.group(3).zfill(2)
@@ -28,13 +24,11 @@ def text_to_sentences(filename: str):
 
 
 if __name__ == '__main__':
+    result = []
     with open('../../input/data_list.txt', 'r', encoding='utf-8') as file:
-        data_array = [i for i in file]
-        for index, item in enumerate(data_array):
-            match = search_date_group(item)
-            rigth_date = date_in_right_format(match)
-            data_array[index] = re.sub(item, rigth_date, item)
-    print(data_array)
+        for i in file.read().split('\n'):
+            result.append(re.sub(r'(\d{1,2}|\d{4})[./](\d{1,2})[./](\d{4}|\d{1,2})', get_date_in_right_format, i))
+    print(result)
 
     list_result = search_year_in_text('../../input/date.txt')
     print(list_result)
